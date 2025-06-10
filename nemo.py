@@ -181,12 +181,12 @@ def generate_main_plot(tot, f_A, f_a):
         st.pyplot(fig)
     
     with col2:
-        with st.expander("Frequency of avirulence allele A"):
-            fig_upper, ax_upper = plt.subplots(figsize=(8, 5), dpi=100)
-            ax_upper.plot(np.arange(0, nb_gen), f_A, linewidth=3)
-            ax_upper.set_xlabel("Year", fontsize=30)
-            ax_upper.tick_params(axis='both', which='major', labelsize=30)
-            st.pyplot(fig_upper)
+        # with st.expander("Frequency of avirulence allele A"):
+            # fig_upper, ax_upper = plt.subplots(figsize=(8, 5), dpi=100)
+            # ax_upper.plot(np.arange(0, nb_gen), f_A, linewidth=3)
+            # ax_upper.set_xlabel("Year", fontsize=30)
+            # ax_upper.tick_params(axis='both', which='major', labelsize=30)
+            # st.pyplot(fig_upper)
         
         with st.expander("Frequency of virulence allele a"):
             fig_lower, ax_lower = plt.subplots(figsize=(8, 5), dpi=100)
