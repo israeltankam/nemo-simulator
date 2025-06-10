@@ -376,6 +376,7 @@ elif main_tab == "Simulation":
             selected_global_type = st.selectbox(
                 "Plant cultivar to deploy each year:", 
                 options=list(type_mapping.keys())
+                )
             st.session_state.all_types = type_mapping[selected_global_type]
         
         if st.button("Apply to all years", use_container_width=True):
