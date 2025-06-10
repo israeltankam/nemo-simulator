@@ -401,7 +401,7 @@ elif main_tab == "Simulation":
     # Transpose the DataFrame and display the table without indexes
     transposed_df = df.transpose()
     transposed_df = transposed_df.rename_axis('Year')
-    st.write(transposed_df.iloc[1:, 1:])
+    st.data_editor(transposed_df.iloc[1:, 1:],num_rows="dynamic",use_container_width=True)
         
     X = np.zeros(st.session_state.num_years+1)
     Y = np.zeros(st.session_state.num_years+1)
