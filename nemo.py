@@ -323,14 +323,14 @@ elif main_tab == "Simulation":
         st.markdown("### Initial values")
         subcol1, subcol2 = st.columns([1, 1])
         with subcol1:
-            st.session_state.a_freq = st.slider(
+            st.session_state.a_freq = st.number_input(
                 "Initial frequency of the virulence allele (%):", 
                 min_value=0.0, max_value=99.9, 
                 value=st.session_state.a_freq * 100, 
                 step=0.1
             ) / 100
         with subcol2:
-            st.session_state.init_infest = st.slider(
+            st.session_state.init_infest = st.number_input(
                 "Initial infestation (eggs/g of soil):", 
                 min_value=0, max_value=80, 
                 value=st.session_state.init_infest, 
@@ -343,7 +343,7 @@ elif main_tab == "Simulation":
         subcol1, subcol2 = st.columns([1, 1])
         with subcol1:
             new_num_years = st.number_input(
-                "Numb. Years:", 
+                "Numb. of simulation years:", 
                 min_value=1, max_value=100, 
                 value=st.session_state.num_years, 
                 step=1,
@@ -355,7 +355,7 @@ elif main_tab == "Simulation":
                 st.rerun()
                 
         with subcol2:
-            st.session_state.detection_threshold = st.slider(
+            st.session_state.detection_threshold = st.number_input(
                 "Acceptance threshold (eggs/g of soil):", 
                 min_value=1, max_value=3, 
                 value=st.session_state.detection_threshold, 
@@ -366,7 +366,7 @@ elif main_tab == "Simulation":
         st.markdown("### Configure the deployment")
         subcol1, subcol2 = st.columns([1, 1])
         with subcol1:
-            st.session_state.all_bc = st.slider(
+            st.session_state.all_bc = st.number_input(
                 "Biocontrol efficacy all at once (%):", 
                 0.0, 100.0, 
                 st.session_state.all_bc * 100, 
@@ -423,9 +423,9 @@ elif main_tab == "Simulation":
 elif main_tab == "Settings":
     st.markdown("# Settings")
     st.markdown("These parameters describe the basic biology of the nematode. They are retrieved from intensive literature review and cautious estimations.")
-    st.session_state.s = st.slider("Survival fraction of larvae (%):", min_value=0.0, max_value=100.0, value=st.session_state.s*100, step=0.1)/100
-    st.session_state.m = st.slider("Average male fraction in the progeny (%):", min_value=0.0, max_value=40.0, value=st.session_state.m*100, step=0.1)/100
-    st.session_state.mu = st.slider("Yearly egg mortality fraction (%):", min_value=0, max_value=20, value=int(st.session_state.mu*100), step=1)/100
-    st.session_state.h = st.slider("Yearly accidental hatching fraction (%):", min_value=0, max_value=35, value=int(st.session_state.h*100), step=1)/100
-    st.session_state.e = st.slider("Average eggs per cyst:", min_value=200, max_value=500, value=st.session_state.e, step=1)
-    st.session_state.c = st.slider("Intraspecific competition parameter:", min_value=0.1, max_value=0.9, value=st.session_state.c, step=0.1)
+    st.session_state.s = st.number_input("Survival fraction of larvae (%):", min_value=0.0, max_value=100.0, value=st.session_state.s*100, step=0.1)/100
+    st.session_state.m = st.number_input("Average male fraction in the progeny (%):", min_value=0.0, max_value=40.0, value=st.session_state.m*100, step=0.1)/100
+    st.session_state.mu = st.number_input("Yearly egg mortality fraction (%):", min_value=0, max_value=20, value=int(st.session_state.mu*100), step=1)/100
+    st.session_state.h = st.number_input("Yearly accidental hatching fraction (%):", min_value=0, max_value=35, value=int(st.session_state.h*100), step=1)/100
+    st.session_state.e = st.number_input("Average eggs per cyst:", min_value=200, max_value=500, value=st.session_state.e, step=1)
+    st.session_state.c = st.number_input("Intraspecific competition parameter:", min_value=0.1, max_value=0.9, value=st.session_state.c, step=0.1)
